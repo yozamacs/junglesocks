@@ -3,9 +3,7 @@ package com.maryum;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,15 +19,15 @@ import static org.junit.matchers.JUnitMatchers.containsString;
 
 @RunWith(DataProviderRunner.class)
 public class JungleSocksTest {
-    private WebDriver webDriver;
+    private static WebDriver webDriver;
 
-    @Before
-    public void setUp() {
+    @BeforeClass
+    public static void setUp() {
         webDriver = new FirefoxDriver();
     }
 
-    @After
-    public void tearDown() {
+    @AfterClass
+    public static void tearDown() {
         webDriver.quit();
     }
 
